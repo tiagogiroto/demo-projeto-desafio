@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,22 +10,29 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Entity
 @Table(name = "dispositivo")
-public class Dispositivo {
+@Data
+@ToString
+public class Dispositivo implements Serializable{
     
     @Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-    private Long deviceId;
-
+    @Column(name ="id")
+    private Long id;
+ 
     @Column(name="name")
     private String name;
 

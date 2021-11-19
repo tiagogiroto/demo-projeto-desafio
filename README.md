@@ -18,9 +18,8 @@ Utilização:
 Para testes foi utilizada a aplicação Postman com os seguintes parâmetros
 ---------
 
-Exibe um objeto específiico da lista
-GET  http://localhost:8080/dispositivo/lista/2
-
+Exibe um objeto por deviceId
+GET  http://localhost:8080/dispositivo/lista/deviceid?deviceid=2
 
 Exibe todos os objeto da lista
 GET  - http://localhost:8080/dispositivo/lista 

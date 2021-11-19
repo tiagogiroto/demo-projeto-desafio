@@ -3,12 +3,15 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -26,10 +29,10 @@ public class DispositivoController {
     }
 
     // metodo list by id
-    @GetMapping("/lista/{id}")
-    public Optional<Dispositivo> listarPorId(@PathVariable Long id) {
+    @GetMapping("/lista/deviceid")
+    public ResponseEntity <List<Dispositivo>> listarPorId(@RequestParam Long deviceid) {
         
-        return dispositivoRepository.findById(id);
+        return new ResponseEntity<List<Dispositivo>> (dispositivoRepository.findByDeviceId(deviceid) ,HttpStatus.OK);
     }
 
     // metodo cadastro

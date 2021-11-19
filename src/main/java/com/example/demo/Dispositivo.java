@@ -27,6 +27,10 @@ public class Dispositivo{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="id")
     private Long id;
+
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name ="deviceid")
+    private Long deviceId;
  
     @Column(name="name")
     private String name;

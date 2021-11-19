@@ -7,7 +7,8 @@ Utilização:
 * Java 11
 * Visual Studio Code
 * Docker
-
+* Postman
+* 
  - Para executar seu projeto:
 
 * Clone o projeto 
@@ -15,7 +16,7 @@ Utilização:
 * Inicie a aplicação utilizando o Spring Boot Dashboard
 
 
-Para testes foi utilizada a aplicação Postman com os seguintes parâmetros
+ - Para testes foi utilizada a aplicação Postman com os seguintes parâmetros
 ---------
 
 Exibe um objeto por deviceId

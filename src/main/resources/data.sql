@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS dispositivo;
 CREATE TABLE dispositivo (
 id bigint auto_increment,
+deviceId int auto_increment,
 name VARCHAR(50),
 mac int,
 email VARCHAR(50),

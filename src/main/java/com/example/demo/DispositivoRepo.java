@@ -1,9 +1,9 @@
 package com.example.demo;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface DispositivoRepo extends CrudRepository< Dispositivo , Long> {
-    
+public interface DispositivoRepo extends JpaRepository< Dispositivo , Long> {
+ 
 }

@@ -22,10 +22,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "dispositivo")
-public class Dispositivo implements Serializable{
+public class Dispositivo{
     
     @Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="id")
     private Long id;
  

@@ -1,16 +1,27 @@
 package com.example.demo;
-import org.springframework.stereotype.Controller;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-// @RequestMapping("/")
+@RequestMapping("/dispositivo")
 public class DispositivoController {
 
-    @GetMapping("/dispositivo")
-    String hello() {
-        return "teste teste";
+    @Autowired
+    private DispositivoRepo dispositivoRepository;
+
+    @GetMapping("/listall")
+    public List<Dispositivo> hello() {
+        
+        return dispositivoRepository.findAll();
+    }
+
+    @GetMapping("/list")
+    public String hello2() {
+        return "teste teste 2222";
     }
     
 

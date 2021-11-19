@@ -1,8 +1,14 @@
 package com.example.demo;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.system.SystemProperties;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,28 +19,33 @@ public class DispositivoController {
     @Autowired
     private DispositivoRepo dispositivoRepository;
 
-    @GetMapping("/listall")
-    public List<Dispositivo> hello() {
+    // metodo list all
+    @GetMapping("/lista")
+    public List<Dispositivo> listar() {
         
         return dispositivoRepository.findAll();
     }
 
-    @GetMapping("/list")
-    public String hello2() {
-        return "teste teste 2222";
+    // metodo list by id
+    @GetMapping("/lista/{id}")
+    public Optional<Dispositivo> listarPorId(@PathVariable Long id) {
+        
+        return dispositivoRepository.findById(id);
     }
-    
 
-    // @PostMapping(path = "/cadastro")
-    // public Dispositivo salvar(@RequestBody Dispositivo dispositivo)
-    // {  
-    //     return dispositivoRepo.save(dispositivo);
-    // }
+    // metodo cadastro
+    @PostMapping(path = "/cadastro")
+    public Dispositivo salvar(@RequestBody Dispositivo dispositivo)
+    {  
+        return dispositivoRepository.save(dispositivo);
+    }
 
-    // @GetMapping(value = "/listall")
-    // @ResponseStatus(HttpStatus.OK)
-    // public List<Dispositivo> listar(){
-    //     return dispositivoRepo.findAll();
-    // }
+    // metodo delete por id
+    @DeleteMapping(path = "/deletar/{id}")
+    public void deletarPorId(@PathVariable Long id)
+    {  
+        dispositivoRepository.deleteById(id);
+        System.out.println("** O ID " + id + " FOI DELETADO **");
+    }
 
 }

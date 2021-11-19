@@ -40,3 +40,16 @@ CREATE - http://localhost:8080/dispositivo/cadastro
 Deleta um objeto por id
 DELETE - http://localhost:8080/dispositivo/deletar/3
 
+
+-- DOCKER CONF --
+
+* Utiliizar a extensão para limpar o jar ' Clean ' Maven  
+* Utilizar a extensão do Maven para ' Deploy ' da aplicação 
+
+Execução do Docker no VScode 
+
+ - docker build -t demo-projeto-desafio:latest .
+
+- docker run -p 8080:8080 demo-projeto-desafio 
+
+*Docker já configurado parra ambiente local

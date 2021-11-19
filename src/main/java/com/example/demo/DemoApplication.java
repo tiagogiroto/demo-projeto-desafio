@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 // resolve bug de dupliicação de instancia de modulo
 @SpringBootApplication
-@ComponentScan({"com.*"})
+// @ComponentScan({"com.example.demo.*"})
 
 public class DemoApplication {
 

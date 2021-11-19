@@ -1,42 +1,32 @@
 package com.example.demo;
-
-import java.util.List;
-
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+@CrossOrigin(origins = "http://localhost:8080")
 @RestController
-@RequestMapping("/dispositivo")
+@RequestMapping("/api/v1")
 public class DispositivoController {
 
-    
-    @GetMapping
-    public String get(){
-        return "teste";
+    @GetMapping(path="/lista")
+    String a() {
+        return "teste teste";
     }
+    
 
-    @Autowired
-    private DispositivoService dispositivoService;
+    // @PostMapping(path = "/cadastro")
+    // public Dispositivo salvar(@RequestBody Dispositivo dispositivo)
+    // {  
+    //     return dispositivoRepo.save(dispositivo);
+    // }
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public Dispositivo salvar(@RequestBody Dispositivo dispositivo)
-    {  
-        return dispositivoService.salvar(dispositivo);
-    }
+    // @GetMapping(value = "/listall")
+    // @ResponseStatus(HttpStatus.OK)
+    // public List<Dispositivo> listar(){
+    //     return dispositivoRepo.findAll();
+    // }
     
-    @GetMapping
-    @ResponseStatus(HttpStatus.OK)
-    public List<Dispositivo> listar(){
-        return dispositivoService.listar();
-    }
-    
+
 
 }

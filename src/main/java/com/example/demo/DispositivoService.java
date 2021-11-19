@@ -16,7 +16,7 @@ public class DispositivoService {
     }
 
     public List<Dispositivo> listar(){
-        return dispositivoRepo.findAll();
+        return (List<Dispositivo>) dispositivoRepo.findAll();
     }
 
     public Optional<Dispositivo> buscaPorId(Long id){

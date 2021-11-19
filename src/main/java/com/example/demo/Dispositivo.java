@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,13 +18,13 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
+
 @Entity
-@Table(name = "dispositivo")
 @Data
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "dispositivo")
 public class Dispositivo implements Serializable{
     
     @Id

@@ -18,9 +18,8 @@ Utilização:
 Para testes foi utilizada a aplicação Postman com os seguintes parâmetros
 ---------
 
-Exibe um objeto específiico da lista
-GET  http://localhost:8080/dispositivo/lista/2
-
+Exibe um objeto por deviceId
+GET  http://localhost:8080/dispositivo/lista/deviceid?deviceid=2
 
 Exibe todos os objeto da lista
 GET  - http://localhost:8080/dispositivo/lista 
@@ -40,3 +39,16 @@ CREATE - http://localhost:8080/dispositivo/cadastro
 Deleta um objeto por id
 DELETE - http://localhost:8080/dispositivo/deletar/3
 
+
+-- DOCKER CONF --
+
+* Utiliizar a extensão para limpar o jar ' Clean ' Maven  
+* Utilizar a extensão do Maven para ' Deploy ' da aplicação 
+
+Execução do Docker no VScode 
+
+ - docker build -t demo-projeto-desafio:latest .
+
+- docker run -p 8080:8080 demo-projeto-desafio 
+
+*Docker já configurado parra ambiente local
